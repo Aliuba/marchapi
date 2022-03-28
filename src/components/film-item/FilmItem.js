@@ -15,16 +15,23 @@ export const FilmItem = (props) => {
 // video: false
 // vote_average: 7.1
 // vote_count: 511
-    const {original_title, poster_path, overview, release_date, vote_average, vote_count} = props;
+    const {original_title, poster_path, overview, release_date, vote_average, vote_count, genres} = props;
+
+
+
     return (
-        <div className={styles.filmItem}>
+        <div className={styles.filmItem} >
             <div>
                 <img src={`https://image.tmdb.org/t/p/w200${poster_path}`} alt={`${original_title}` }/>
             </div>
             <div>
                 <h2>{original_title}</h2>
+                <h3>Genres:</h3>
+                <span>{genres.map((value)=>(<div key={value.id}>{value.name}</div>))}</span>
+
                 <span>
-                Release date:{release_date}
+                    <h3>Release date:</h3>{release_date}
+
                 </span>
                 <p>{overview}</p>
                 <span>Vote_average:{vote_average} total votes:{vote_count}</span>

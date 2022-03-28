@@ -1,10 +1,10 @@
 import React from 'react';
 import {FilmItem} from "../film-item";
 import styles from "./FilmList.module.css"
-export const FilmList=({items})=> {
+export const FilmList=({items, onFilmClick})=> {
         return (
-            <div className={styles.listWrapper}>
-                {items.map((item)=><div className={styles.itemWrapper}><FilmItem{...item} key={item.id}/></div>
+            <div className={styles.listWrapper} >
+                {items.map(item=><div onClick={()=>onFilmClick(item)} className={styles.itemWrapper} key={item.id}><FilmItem{...item} key={item.id}/></div>
                     )}
             </div>
         );
