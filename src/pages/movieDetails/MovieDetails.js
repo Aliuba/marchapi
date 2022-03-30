@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import {useMatch} from "react-router-dom";
 import {movieService} from "../../services";
 import {FilmItem} from "../../components";
-
+import { ToastContainer, toast } from 'react-toastify';
 
 
 export const MovieDetails = (props) => {
@@ -14,6 +14,7 @@ const {params:{id}}=useMatch(props.path);
         try{
             setIsLoading(true)
             const data=  await movieService.getMovieDetailsById(id)
+            toast.info("details")
         setFilmDetails(data)
         console.log(data)
         }

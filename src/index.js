@@ -8,10 +8,27 @@ BrowserRouter as Router,
 
 }
 from 'react-router-dom'
+
+
+  import { ToastContainer, toast } from 'react-toastify';
+
+  import 'react-toastify/dist/ReactToastify.css';
+  // minified version is also included
+  // import 'react-toastify/dist/ReactToastify.min.css';
+
+
+    // const notify = () => toast("Wow so easy !");
+
+
+
+
 ReactDOM.render(
   <React.StrictMode>
       <Router>
+          {/*<button onClick={notify}>Notify !</button>*/}
           <App />
+
+        <ToastContainer autoClose={1000} />
       </Router>
 
   </React.StrictMode>,
