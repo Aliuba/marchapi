@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import {useMatch} from "react-router-dom";
 import {movieService} from "../../services";
 import {FilmItem} from "../../components";
-import { ToastContainer, toast } from 'react-toastify';
+import {toast } from 'react-toastify';
 
 
 export const MovieDetails = (props) => {
